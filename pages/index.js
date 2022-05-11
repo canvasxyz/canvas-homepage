@@ -109,9 +109,26 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Canvas</title>
-        <meta name="description" content="Something Computers" />
+        <title>
+          Canvas – Decentralizing General Computing and the Tnternet
+        </title>
         <link rel="icon" href="/favicon.png" />
+        <meta name="twitter:card" content="summary" />
+        <meta
+          property="og:title"
+          content="Canvas – Decentralizing General Computing and the Tnternet"
+        />
+        <meta
+          property="og:description"
+          content="Canvas is a new peer-to-peer architecture and developer platform for building decentralized applications."
+        />
+
+        <meta
+          property="og:image"
+          content="https://www.canvas.xyz/meta_cover.png"
+        />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta property="og:url" content="https://www.canvas.xyz" />
       </Head>
       <Box
         background="#FBF5E9"
