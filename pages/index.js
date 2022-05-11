@@ -267,7 +267,7 @@ export default function Home() {
                     Email submitted! We&apos;ll be in touch soon 😁 In the mean
                     time, why not follow us on{" "}
                     <Link href="https://twitter.com/canvas_xyz" target="_blank">
-                      Twitter!
+                      <b>Twitter!</b>
                     </Link>
                   </Box>
                 ) : (
