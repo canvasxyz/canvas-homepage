@@ -264,7 +264,11 @@ export default function Home() {
                     fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
             Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
                   >
-                    Email submitted! We&apos;ll be in touch soon 😁
+                    Email submitted! We&apos;ll be in touch soon 😁 In the mean
+                    time, why not follow us on{" "}
+                    <Link href="https://twitter.com/canvas_xyz" target="_blank">
+                      Twitter!
+                    </Link>
                   </Box>
                 ) : (
                   <Flex flexDirection={["column", "column", "row", "row"]}>
