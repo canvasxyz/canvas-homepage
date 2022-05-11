@@ -120,7 +120,7 @@ export default function Home() {
         />
         <meta
           property="og:description"
-          content="Canvas is a new peer-to-peer architecture and developer platform for building decentralized applications."
+          content="Canvas is a peer-to-peer architecture and developer platform for building decentralized applications."
         />
 
         <meta
