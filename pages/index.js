@@ -1,21 +1,122 @@
 import Head from "next/head";
 
-import { Flex, Box, Heading, Text } from "@chakra-ui/react";
+import {
+  Flex,
+  Box,
+  Heading,
+  Text,
+  Image,
+  Input,
+  Button,
+  Link,
+  useToast,
+} from "@chakra-ui/react";
+import { motion } from "framer-motion";
+
+import { useState, useRef, useEffect } from "react";
+
 import "@fontsource/space-mono";
 import "@fontsource/space-mono/700.css";
 
+const validateEmail = (email) => {
+  return email.match(
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  );
+};
+
 export default function Home() {
+  const [sending, setSending] = useState();
+  const [submitted, setSubmitted] = useState(false);
+  const [hasRendered, setHasRendered] = useState(false);
+  const toast = useToast();
+
+  const emailRef = useRef();
+
+  useEffect(() => {
+    setHasRendered(true);
+  }, []);
+
+  const send = async (e) => {
+    e.preventDefault();
+    setSending(true);
+    const email = emailRef.current.value?.trim();
+
+    if (email === "") {
+      toast({
+        render: () => (
+          <Box
+            color="white"
+            p={3}
+            bg="#EA4A4A"
+            fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+          Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
+          >
+            Please enter an Email Address
+          </Box>
+        ),
+      });
+    } else if (!validateEmail(email)) {
+      toast({
+        render: () => (
+          <Box
+            color="white"
+            p={3}
+            bg="#EA4A4A"
+            fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+          Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
+          >
+            Please enter a valid Email Address
+          </Box>
+        ),
+      });
+    } else {
+      let response = await fetch(
+        "https://expressjs-postgres-production-62ae.up.railway.app/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json;charset=utf-8",
+          },
+          body: JSON.stringify({ email }),
+        }
+      ).catch(() => {
+        setSending(false);
+      });
+
+      try {
+        await response.json();
+        setSubmitted(true);
+      } catch (err) {
+        toast({
+          render: () => (
+            <Box
+              color="white"
+              p={3}
+              bg="#EA4A4A"
+              fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+            Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
+            >
+              Invalid Email
+            </Box>
+          ),
+        });
+      }
+    }
+
+    setSending(false);
+  };
+
   return (
     <div>
       <Head>
         <title>Canvas</title>
         <meta name="description" content="Something Computers" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <Box
         background="#FBF5E9"
         width="100vw"
-        height="100vh"
+        height={["auto", "auto", "100vh", "100vh"]}
         fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
       >
@@ -26,15 +127,42 @@ export default function Home() {
           width="100%"
           top="0"
           borderBottom="2px solid #EA4A4A"
+          zIndex="420"
         >
-          Canvas
+          <a href="#">
+            <Box
+              as={motion.div}
+              width="42px"
+              height="42px"
+              mt="10px"
+              ml="10px"
+              whileHover={{
+                scale: 1.1,
+                rotate: 90,
+              }}
+              whileTap={{
+                scale: 0.969,
+                rotate: 70,
+              }}
+              flexShrink="1"
+            >
+              <Image
+                src="/logo.svg"
+                alt="Canvas Logo"
+                width="42px"
+                height="42px"
+              />
+            </Box>
+          </a>
         </Box>
+
         <Box
           position="absolute"
           width="64px"
           height="100%"
           left="0"
           borderRight="2px solid #3242CD"
+          display={["none", "none", "block", "block"]}
         ></Box>
         <Box
           position="absolute"
@@ -42,36 +170,145 @@ export default function Home() {
           height="100%"
           right="0"
           borderLeft="2px solid #262626"
+          display={["none", "none", "block", "block"]}
         ></Box>
+
+        <Flex
+          padding="64px"
+          paddingLeft={["0px", "0px", "64px", "64px"]}
+          paddingRight={["0px", "0px", "64px", "64px"]}
+          flexDirection="row"
+          justifyContent="center"
+          height="100%"
+        >
+          <Flex
+            backgroundImage="/headerbg.svg"
+            backgroundRepeat="no-repeat"
+            backgroundPosition="bottom"
+            backgroundSize="100%"
+            flexGrow="1"
+            justifyContent="center"
+            paddingBottom={["128px", "128px", "0", "0"]}
+          >
+            <Box maxWidth="720px" padding="24px">
+              <Heading
+                color="#262626"
+                fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+              Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
+                mt="36px"
+                mb="24px"
+              >
+                The general computing platform for the decentralized web
+              </Heading>
+              <Text color="#262626" mb="12px" fontSize="lg">
+                We&apos;re building a new peer-to-peer architecture and
+                developer platform for building decentralized applications
+                {hasRendered && (
+                  <motion.div
+                    style={{
+                      height: "24px",
+                      width: "14px",
+                      position: "absolute",
+                      backgroundColor: "red",
+                      opacity: 0,
+                      display: "inline-block",
+                      borderRadius: "2px",
+                      marginLeft: "4px",
+                    }}
+                    animate={{
+                      opacity: [0, 1, 1, 0, 1, 1, 0, 1, 1, 0],
+                      scale: [0.9, 1, 1, 0.9, 1, 1, 0.9, 1, 1, 0.9],
+                      backgroundColor: [
+                        "#FBF5E9",
+                        "#EA4A4A",
+                        "#EA4A4A",
+                        "#FBF5E9",
+                        "#9FD330",
+                        "#9FD330",
+                        "#FBF5E9",
+                        "#3242CD",
+                        "#3242CD",
+                        "#FBF5E9",
+                      ],
+                    }}
+                    transition={{
+                      repeat: Infinity,
+                      type: "keyframes",
+                      duration: 4,
+                      repeatType: "loop",
+                    }}
+                  ></motion.div>
+                )}
+              </Text>
+              <Text color="#262626" fontSize="lg" mb="24px">
+                Sign up to get updates. Public demo coming soon&trade;
+              </Text>
+              <form className="email-form" onSubmit={send}>
+                {submitted ? (
+                  <Box
+                    color="white"
+                    p={3}
+                    bg="#3247CD"
+                    fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+            Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
+                  >
+                    Email submitted! We&apos;ll be in touch soon 😁
+                  </Box>
+                ) : (
+                  <Flex flexDirection={["column", "column", "row", "row"]}>
+                    <Input
+                      size="lg"
+                      borderRadius="0"
+                      border="2px solid #262626"
+                      borderColor="#262626"
+                      background="#fff"
+                      focusBorderColor="#3242CD"
+                      _hover={{
+                        borderColor: "#262626",
+                      }}
+                      outline="2px"
+                      ref={emailRef}
+                      placeholder="Your Email Address"
+                    />
+
+                    <Button
+                      as={motion.button}
+                      type="submit"
+                      colorScheme="blue"
+                      size="lg"
+                      ml={["0px", "0px", "12px", "12px"]}
+                      mt={["12px", "12px", "0px", "0px"]}
+                      borderRadius="0"
+                      backgroundColor="#3242CD"
+                      isLoading={sending}
+                      _hover={{
+                        backgroundColor: "#222E9B",
+                      }}
+                      _active={{
+                        backgroundColor: "#222E9B",
+                      }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      {sending ? "Submitting" : "Submit"}
+                    </Button>
+                  </Flex>
+                )}
+              </form>
+            </Box>
+          </Flex>
+        </Flex>
         <Box
-          position="absolute"
+          position={("relative", "relative", "absolute", "absolute")}
           height="64px"
           width="100%"
           bottom="0"
           borderTop="2px solid #9FD330"
-          paddingLeft="76px"
+          paddingLeft={["48px", "48px", "76px", "76px"]}
+          display="flex"
+          alignItems="center"
         >
-          © 2022 Canvas Technology Corporation
+          &#9400; 2022 Canvas Technology Corporation
         </Box>
-        <Flex padding="64px" flexDirection="row" justifyContent="center">
-          <Box maxWidth="720px">
-            <Heading
-              color="#262626"
-              fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-              Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
-              mt="36px"
-              mb="24px"
-            >
-              The general computing platform for the decentralized web
-            </Heading>
-            <Text color="#262626" mb="12px">
-              We&apos;re building a new peer-to-peer architecture and developer
-              platform for building decentralized applications
-            </Text>
-            <Text color="#262626">Public demo coming soonTM</Text>
-            <Flex>form goes here</Flex>
-          </Box>
-        </Flex>
       </Box>
     </div>
   );
