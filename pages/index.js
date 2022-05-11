@@ -109,14 +109,12 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>
-          Canvas : Decentralizing General Computing and the Tnternet
-        </title>
+        <title>Canvasal Computing and the Tnternet</title>
         <link rel="icon" href="/favicon.png" />
         <meta name="twitter:card" content="summary" />
         <meta
           property="og:title"
-          content="Canvas : Decentralizing General Computing and the Tnternet"
+          content="Canvasng General Computing and the Tnternet"
         />
         <meta
           property="og:description"
