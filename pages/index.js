@@ -51,10 +51,12 @@ export default function Home() {
             color="white"
             p={3}
             bg="#EA4A4A"
-            fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+            fontSize="lg"
+            textAlign="center"
+            fontFamily="Space Grotesk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
           Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
           >
-            Please enter an Email Address
+            Please enter an email address
           </Box>
         ),
       })
@@ -65,10 +67,12 @@ export default function Home() {
             color="white"
             p={3}
             bg="#EA4A4A"
-            fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+            fontSize="lg"
+            textAlign="center"
+            fontFamily="Space Grotesk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
           Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
           >
-            Please enter a valid Email Address
+            Please enter a valid email address
           </Box>
         ),
       })
@@ -96,10 +100,12 @@ export default function Home() {
               color="white"
               p={3}
               bg="#EA4A4A"
-              fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+              fontSize="lg"
+              textAlign="center"
+              fontFamily="Space Grotesk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
             Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
             >
-              Invalid Email
+              Invalid email
             </Box>
           ),
         })
@@ -118,7 +124,7 @@ export default function Home() {
         <meta property="og:title" content="Canvas" />
         <meta
           property="og:description"
-          content="Canvas is a new peer-to-peer architecture and developer platform for building decentralized applications."
+          content="A peer-to-peer architecture and developer platform for building decentralized applications."
         />
 
         <meta
@@ -213,26 +219,22 @@ export default function Home() {
                 letterSpacing="-0.2px"
                 fontSize={["2rem", "2rem", "2.25rem", "2.25rem"]}
                 maxWidth="700px"
-                mt="36px"
+                mt={["1.2rem", "1.2rem", "4rem", "4rem"]}
                 mb="24px"
               >
                 Fully peer-to-peer decentralized applications
-              </Heading>
-              <Text color="#262626" mb="30px" fontSize="lg" maxWidth="540px">
-                Canvas is a peer-to-peer framework that radically expands the
-                range of applications that can be built on decentralized
-                networks.
                 {hasRendered && (
                   <motion.div
                     style={{
-                      height: "24px",
-                      width: "14px",
+                      height: "31px",
+                      width: "19px",
                       position: "absolute",
                       backgroundColor: "red",
                       opacity: 0,
                       display: "inline-block",
                       borderRadius: "2px",
-                      marginLeft: "4px",
+                      marginLeft: "7px",
+                      marginTop: "5px",
                     }}
                     animate={{
                       opacity: [0, 1, 1, 0, 1, 1, 0, 1, 1, 0],
@@ -258,18 +260,24 @@ export default function Home() {
                     }}
                   ></motion.div>
                 )}
+              </Heading>
+              <Text color="#262626" mb="30px" fontSize="lg" maxWidth="540px">
+                Canvas is a developer framework that radically expands the range
+                of applications that can be built on decentralized networks.
               </Text>
               <form className="email-form" onSubmit={send}>
                 {submitted ? (
                   <Box
                     color="white"
-                    p={3}
+                    display="inline-block"
+                    px="5"
+                    py="3"
                     bg="#3247CD"
-                    fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+                    fontSize="lg"
+                    fontFamily="Space Grotesk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
             Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
                   >
-                    Email submitted! We&apos;ll be in touch soon 😁 In the
-                    meantime, why not follow us on{" "}
+                    Email submitted! In the meantime, why not follow us on{" "}
                     <Link href="https://twitter.com/canvas_xyz" target="_blank">
                       <b>Twitter</b>
                     </Link>
@@ -316,13 +324,45 @@ export default function Home() {
                 )}
               </form>
               <Box>
+                <Flex mt="34px" flexWrap="wrap" width="calc(100% + 80px)">
+                  <Text
+                    fontSize="lg"
+                    mt="3px"
+                    mr="29px"
+                    display={["none", "none", "block", "block"]}
+                  >
+                    Supported partly by:
+                  </Text>
+                  <Image
+                    src="/logo_c.png"
+                    alt="Common"
+                    mt={["2px", "2px", 0, 0]}
+                    height={["28px", "28px", "34px", "34px"]}
+                    mr={["29px", "29px", "34px", "34px"]}
+                  />
+                  <Image
+                    src="/logo_z.png"
+                    alt="Zeitgeist"
+                    height={["25px", "25px", "27px", "27px"]}
+                    mr={["24px", "24px", "32px", "32px"]}
+                    mt={["5px", "5px", "5px", "5px"]}
+                  />
+                  <Image
+                    src="/logo_p.png"
+                    alt="Protocol Labs"
+                    height={["44px", "42px", "44px", "44px"]}
+                    mt={["22px", "-5px", "-5px", "-5px"]}
+                  />
+                </Flex>
+              </Box>
+              <Box>
                 <Heading
                   color="#262626"
                   fontFamily="Space Grotesk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
               Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
                   letterSpacing="-0.2px"
                   maxWidth="450px"
-                  mt="100px"
+                  mt="10rem"
                   mb="24px"
                 >
                   A new architecture for decentralized apps
@@ -330,8 +370,8 @@ export default function Home() {
                 <Text color="#262626" mb="12px" fontSize="lg" maxWidth="560px">
                   On Canvas applications, every user action is signed and
                   relayed over a peer-to-peer network, and executed in a P2P VM
-                  with CRDTs. This means interactions happen instantly and
-                  without token fees.
+                  with CRDTs. This means interactions happen instantly, without
+                  token fees.
                 </Text>
                 <Text color="#262626" mb="12px" fontSize="lg" maxWidth="560px">
                   You can use this to build chat, governance, social graphs,
@@ -360,7 +400,7 @@ canvas run app.js`}
               Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
                   letterSpacing="-0.2px"
                   maxWidth="450px"
-                  mt="100px"
+                  mt="10rem"
                   mb="24px"
                 >
                   Public good technology, built for interoperability
@@ -370,36 +410,53 @@ canvas run app.js`}
                   database chain.
                 </Text>
                 <Text color="#262626" mb="12px" fontSize="lg" maxWidth="560px">
-                  You can continue using your current data schemas, and bridge
-                  signed data in and out, using standards like EIP-712 and SIWE.
+                  You can continue using your current schemas and stack,
+                  interoperating with Canvas using your API, and standards like
+                  EIP-712 and SIWE/SIWx.
                 </Text>
                 <Text color="#262626" mb="12px" fontSize="lg" maxWidth="560px">
-                  Canvas applications are upgradeable and easy to extend, and we
-                  provide a hosted service, React hooks, and more.
+                  Canvas applications are upgradeable and easy to extend. For
+                  end users, we provide a hosted service and React hooks.
                 </Text>
               </Box>
               <Box>
-                <NextLink
-                  href="https://hub.canvas.xyz"
-                  passHref
-                  target="_blank"
-                  noreferrer
-                  noopener
-                >
-                  <Button
-                    as={motion.button}
-                    type="submit"
-                    colorScheme="blue"
-                    size="lg"
-                    mt="30px"
-                    borderRadius="0"
-                    backgroundColor="#3242CD"
-                    _hover={{ backgroundColor: "#222E9B" }}
-                    _active={{ backgroundColor: "#222E9B" }}
-                    whileTap={{ scale: 0.96 }}
-                  >
-                    See hosted applications
-                  </Button>
+                <NextLink href="https://hub.canvas.xyz" passHref>
+                  <a target="_blank" noreferrer noopener>
+                    <Button
+                      as={motion.button}
+                      type="submit"
+                      colorScheme="blue"
+                      size="lg"
+                      mt="30px"
+                      mr="16px"
+                      borderRadius="0"
+                      backgroundColor="#3242CD"
+                      _hover={{ backgroundColor: "#222E9B" }}
+                      _active={{ backgroundColor: "#222E9B" }}
+                      whileTap={{ scale: 0.96 }}
+                      disabled
+                    >
+                      See live applications (soon)
+                    </Button>
+                  </a>
+                </NextLink>
+                <NextLink href="https://docs.canvas.xyz" passHref>
+                  <a target=" _blank" noreferrer noopener>
+                    <Button
+                      as={motion.button}
+                      type="submit"
+                      colorScheme="blue"
+                      size="lg"
+                      mt={["12px", "30px", "30px", "30px"]}
+                      borderRadius="0"
+                      backgroundColor="#3242CD"
+                      _hover={{ backgroundColor: "#222E9B" }}
+                      _active={{ backgroundColor: "#222E9B" }}
+                      whileTap={{ scale: 0.96 }}
+                    >
+                      Read the docs
+                    </Button>
+                  </a>
                 </NextLink>
               </Box>
             </Box>
@@ -407,15 +464,17 @@ canvas run app.js`}
         </Flex>
         <Box
           position={("relative", "relative", "relative", "relative")}
-          height="76px"
+          height="84px"
           width="100%"
           bottom="0"
           borderTop="2px solid #9FD330"
           paddingLeft={["48px", "48px", "96px", "96px"]}
+          lineHeight="1.3"
           display="flex"
           alignItems="center"
+          maxWidth="100vw"
         >
-          &#9400; 2022 Canvas Technology Corporation
+          &#9400; 2022-2023 Canvas Technology Corporation
         </Box>
       </Box>
     </div>
