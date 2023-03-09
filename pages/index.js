@@ -205,7 +205,12 @@ export default function Home() {
           justifyContent="center"
           height="100%"
         >
-          <Box width="100%">
+          <Box
+            width="100%"
+            maxWidth="1500px"
+            margin="0 auto"
+            position="relative"
+          >
             <Box
               maxWidth="960px"
               margin="0 auto"
@@ -341,7 +346,7 @@ export default function Home() {
                     mr="29px"
                     display={["none", "none", "block", "block"]}
                   >
-                    Supported partly by:
+                    Supported in part by:
                   </Text>
                   <Image
                     src="/logo_c.png"
@@ -384,7 +389,7 @@ export default function Home() {
                   tokens or fees.
                 </Text>
                 <Text color="#262626" mb="12px" fontSize="lg" maxWidth="560px">
-                  You can use this to build chat, governance, social graphs,
+                  You can use this to build social graphs, chat, governance,
                   decentralized data indexers, and more. Try it now:
                 </Text>
                 <Text
@@ -423,25 +428,24 @@ canvas run app.js`}
                   mt="10rem"
                   mb="24px"
                 >
-                  Public good technology, built for interoperability
+                  Elegant technology, built as a public good
                 </Heading>
-                <Text color="#262626" mb="12px" fontSize="lg" maxWidth="560px">
+                <Text color="#262626" mb="12px" fontSize="lg" maxWidth="540px">
                   Canvas is pure peer-to-peer infrastructure, not a new L1 or
                   database chain.
                 </Text>
-                <Text color="#262626" mb="12px" fontSize="lg" maxWidth="560px">
+                <Text color="#262626" mb="12px" fontSize="lg" maxWidth="520px">
                   It works with your existing database, as long as your users
-                  log in using a wallet or other public-key provider. We support
-                  standards like EIP-712 and SIWE/SIWx, and many major chains,
-                  and provide a hosted peering service to keep your data online.
+                  log in using a wallet or public-key provider. We support
+                  standards like EIP-712 and SIWE/SIWx, and many major chains.
                 </Text>
-                <Text color="#262626" mb="12px" fontSize="lg" maxWidth="560px">
-                  For new applications, we have React hooks and a command-line
-                  interface, to make getting started as easy as using Heroku or
-                  Vercel.
+                <Text color="#262626" mb="12px" fontSize="lg" maxWidth="520px">
+                  We also provide React hooks, a CLI tool, and a cloud-hosted
+                  peer, to make building new applications as easy as using
+                  Heroku or Vercel.
                 </Text>
               </Box>
-              <Box>
+              <Box mb="2rem">
                 <NextLink href="https://hub.canvas.xyz" passHref>
                   <a
                     target="_blank"
