@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from "next/head"
 
 import {
   Flex,
@@ -10,36 +10,37 @@ import {
   Button,
   Link,
   useToast,
-} from "@chakra-ui/react";
-import { motion } from "framer-motion";
+} from "@chakra-ui/react"
+import { motion } from "framer-motion"
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react"
 
-import "@fontsource/space-mono";
-import "@fontsource/space-mono/700.css";
+import "@fontsource/space-mono"
+import "@fontsource/space-mono/700.css"
+import "@fontsource/manrope"
 
 const validateEmail = (email) => {
   return email.match(
     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  );
-};
+  )
+}
 
 export default function Home() {
-  const [sending, setSending] = useState();
-  const [submitted, setSubmitted] = useState(false);
-  const [hasRendered, setHasRendered] = useState(false);
-  const toast = useToast();
+  const [sending, setSending] = useState()
+  const [submitted, setSubmitted] = useState(false)
+  const [hasRendered, setHasRendered] = useState(false)
+  const toast = useToast()
 
-  const emailRef = useRef();
+  const emailRef = useRef()
 
   useEffect(() => {
-    setHasRendered(true);
-  }, []);
+    setHasRendered(true)
+  }, [])
 
   const send = async (e) => {
-    e.preventDefault();
-    setSending(true);
-    const email = emailRef.current.value?.trim();
+    e.preventDefault()
+    setSending(true)
+    const email = emailRef.current.value?.trim()
 
     if (email === "") {
       toast({
@@ -54,7 +55,7 @@ export default function Home() {
             Please enter an Email Address
           </Box>
         ),
-      });
+      })
     } else if (!validateEmail(email)) {
       toast({
         render: () => (
@@ -68,7 +69,7 @@ export default function Home() {
             Please enter a valid Email Address
           </Box>
         ),
-      });
+      })
     } else {
       let response = await fetch(
         "https://expressjs-postgres-production-62ae.up.railway.app/",
@@ -80,12 +81,12 @@ export default function Home() {
           body: JSON.stringify({ email }),
         }
       ).catch(() => {
-        setSending(false);
-      });
+        setSending(false)
+      })
 
       try {
-        await response.json();
-        setSubmitted(true);
+        await response.json()
+        setSubmitted(true)
       } catch (err) {
         toast({
           render: () => (
@@ -99,12 +100,12 @@ export default function Home() {
               Invalid Email
             </Box>
           ),
-        });
+        })
       }
     }
 
-    setSending(false);
-  };
+    setSending(false)
+  }
 
   return (
     <div>
@@ -128,11 +129,11 @@ export default function Home() {
       <Box
         background="#FBF5E9"
         width="100vw"
-        height={["auto", "auto", "100vh", "100vh"]}
-        fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        height={["auto", "auto", "100%", "100%"]}
+        fontFamily="Manrope, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
       >
-        {/* Lines */}
+        {/* Lines - Top */}
         <Box
           position="absolute"
           height="64px"
@@ -168,6 +169,7 @@ export default function Home() {
           </a>
         </Box>
 
+        {/* Lines - Left/Right */}
         <Box
           position="absolute"
           width="64px"
@@ -185,36 +187,39 @@ export default function Home() {
           display={["none", "none", "block", "block"]}
         ></Box>
 
+        {/* Body */}
         <Flex
-          padding="64px"
-          paddingLeft={["0px", "0px", "64px", "64px"]}
-          paddingRight={["0px", "0px", "64px", "64px"]}
+          padding="120px"
+          pb="120px"
+          paddingLeft={["30px", "30px", "64px", "64px"]}
+          paddingRight={["30px", "30px", "64px", "64px"]}
           flexDirection="row"
           justifyContent="center"
           height="100%"
         >
-          <Flex
-            backgroundImage="/headerbg.svg"
-            backgroundRepeat="no-repeat"
-            backgroundPosition="bottom"
-            backgroundSize="100%"
-            flexGrow="1"
-            justifyContent="center"
-            paddingBottom={["128px", "128px", "0", "0"]}
-          >
-            <Box maxWidth="720px" padding="24px">
+          <Box width="100%">
+            <Box
+              maxWidth="960px"
+              margin="0 auto"
+              paddingLeft={["16px", "16px", "50px", "60px"]}
+              paddingRight={["16px", "16px", "50px", "60px"]}
+            >
               <Heading
                 color="#262626"
-                fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+                fontFamily="Space Grotesk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
               Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
+                letterSpacing="-0.2px"
+                fontSize={["30px", "36px", "42px", "45px"]}
+                maxWidth="700px"
                 mt="36px"
                 mb="24px"
               >
-                The general computing platform for the decentralized web
+                Fully peer-to-peer decentralized applications
               </Heading>
-              <Text color="#262626" mb="12px" fontSize="lg">
-                We&apos;re building a new peer-to-peer architecture and
-                developer platform for building decentralized applications
+              <Text color="#262626" mb="30px" fontSize="lg" maxWidth="540px">
+                Canvas is a peer-to-peer framework that radically expands the
+                range of applications that can be built on decentralized
+                networks.
                 {hasRendered && (
                   <motion.div
                     style={{
@@ -252,9 +257,6 @@ export default function Home() {
                   ></motion.div>
                 )}
               </Text>
-              <Text color="#262626" fontSize="lg" mb="24px">
-                Sign up to get updates. Public demo coming soon&trade;
-              </Text>
               <form className="email-form" onSubmit={send}>
                 {submitted ? (
                   <Box
@@ -267,13 +269,14 @@ export default function Home() {
                     Email submitted! We&apos;ll be in touch soon 😁 In the
                     meantime, why not follow us on{" "}
                     <Link href="https://twitter.com/canvas_xyz" target="_blank">
-                      <b>Twitter!</b>
+                      <b>Twitter</b>
                     </Link>
                   </Box>
                 ) : (
                   <Flex flexDirection={["column", "column", "row", "row"]}>
                     <Input
                       size="lg"
+                      maxWidth="350px"
                       borderRadius="0"
                       border="2px solid #262626"
                       borderColor="#262626"
@@ -310,16 +313,77 @@ export default function Home() {
                   </Flex>
                 )}
               </form>
+              <Box>
+                <Heading
+                  color="#262626"
+                  fontFamily="Space Grotesk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+              Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
+                  letterSpacing="-0.2px"
+                  maxWidth="450px"
+                  mt="100px"
+                  mb="24px"
+                >
+                  A new architecture for decentralized apps
+                </Heading>
+                <Text color="#262626" mb="12px" fontSize="lg" maxWidth="560px">
+                  On Canvas applications, every user action is signed and
+                  relayed over a peer-to-peer network, and executed in a P2P VM
+                  with CRDTs. This means interactions happen instantly and
+                  without token fees.
+                </Text>
+                <Text color="#262626" mb="12px" fontSize="lg" maxWidth="560px">
+                  You can use this to build chat, governance, social graphs,
+                  decentralized data applications, and more. Try it now:
+                </Text>
+                <Text
+                  color="#fff"
+                  bg="#181818"
+                  p="18px 20px"
+                  mt="30px"
+                  borderRadius="10px"
+                  maxWidth="500px"
+                  lineHeight="1.35"
+                >
+                  <pre>{`npm install -g @canvas-js/cli
+canvas init app.js
+canvas run app.js`}</pre>
+                </Text>
+              </Box>
+              <Box>
+                <Heading
+                  color="#262626"
+                  fontFamily="Space Grotesk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+              Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
+                  letterSpacing="-0.2px"
+                  maxWidth="450px"
+                  mt="100px"
+                  mb="24px"
+                >
+                  Public good technology, built for interoperability
+                </Heading>
+                <Text color="#262626" mb="12px" fontSize="lg" maxWidth="560px">
+                  Canvas is pure peer-to-peer infrastructure, not a new L1 or
+                  database chain.
+                </Text>
+                <Text color="#262626" mb="12px" fontSize="lg" maxWidth="560px">
+                  You can continue using your current data schemas, and bridge
+                  signed data in and out, using standards like EIP-712 and SIWE.
+                </Text>
+                <Text color="#262626" mb="12px" fontSize="lg" maxWidth="560px">
+                  Canvas applications are upgradeable and easy to extend, and we
+                  provide a hosted service, React hooks, and more.
+                </Text>
+              </Box>
             </Box>
-          </Flex>
+          </Box>
         </Flex>
         <Box
-          position={("relative", "relative", "absolute", "absolute")}
-          height="64px"
+          position={("relative", "relative", "relative", "relative")}
+          height="76px"
           width="100%"
           bottom="0"
           borderTop="2px solid #9FD330"
-          paddingLeft={["48px", "48px", "76px", "76px"]}
+          paddingLeft={["48px", "48px", "96px", "96px"]}
           display="flex"
           alignItems="center"
         >
@@ -327,5 +391,5 @@ export default function Home() {
         </Box>
       </Box>
     </div>
-  );
+  )
 }
