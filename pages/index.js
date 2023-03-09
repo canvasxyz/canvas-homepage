@@ -381,11 +381,11 @@ export default function Home() {
                   On Canvas applications, every user action is signed and
                   relayed over a peer-to-peer network, and executed in a P2P VM
                   with CRDTs. This means interactions happen instantly, without
-                  token fees.
+                  tokens or fees.
                 </Text>
                 <Text color="#262626" mb="12px" fontSize="lg" maxWidth="560px">
                   You can use this to build chat, governance, social graphs,
-                  decentralized data applications, and more. Try it now:
+                  decentralized data indexers, and more. Try it now:
                 </Text>
                 <Text
                   color="#fff"
@@ -430,18 +430,24 @@ canvas run app.js`}
                   database chain.
                 </Text>
                 <Text color="#262626" mb="12px" fontSize="lg" maxWidth="560px">
-                  You can continue using your current schemas and stack,
-                  interoperating with Canvas using your API, using standards
-                  like EIP-712 and SIWE/SIWx.
+                  It works with your existing database, as long as your users
+                  log in using a wallet or other public-key provider. We support
+                  standards like EIP-712 and SIWE/SIWx, and many major chains,
+                  and provide a hosted peering service to keep your data online.
                 </Text>
                 <Text color="#262626" mb="12px" fontSize="lg" maxWidth="560px">
-                  For users building new applications, we provide a hosted
-                  service and React hooks.
+                  For new applications, we have React hooks and a command-line
+                  interface, to make getting started as easy as using Heroku or
+                  Vercel.
                 </Text>
               </Box>
               <Box>
                 <NextLink href="https://hub.canvas.xyz" passHref>
-                  <a target="_blank" noreferrer noopener>
+                  <a
+                    target="_blank"
+                    noreferrer="noreferrer"
+                    noopener="noopener"
+                  >
                     <Button
                       as={motion.button}
                       type="submit"
@@ -461,7 +467,11 @@ canvas run app.js`}
                   </a>
                 </NextLink>
                 <NextLink href="https://docs.canvas.xyz" passHref>
-                  <a target=" _blank" noreferrer noopener>
+                  <a
+                    target=" _blank"
+                    noreferrer="noreferrer"
+                    noopener="noopener"
+                  >
                     <Button
                       as={motion.button}
                       type="submit"
