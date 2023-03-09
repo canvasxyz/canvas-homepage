@@ -186,14 +186,14 @@ export default function Home() {
           borderRight="2px solid #3242CD"
           display={["none", "none", "block", "block"]}
         ></Box>
-        <Box
+        {/* <Box
           position="absolute"
           width="64px"
           height="100%"
           right="0"
           borderLeft="2px solid #262626"
           display={["none", "none", "block", "block"]}
-        ></Box>
+          ></Box>*/}
 
         {/* Body */}
         <Flex
@@ -212,6 +212,16 @@ export default function Home() {
               paddingLeft={["16px", "16px", "50px", "60px"]}
               paddingRight={["16px", "16px", "50px", "60px"]}
             >
+              <Image
+                display={["none", "none", "none", "block"]}
+                position="absolute"
+                marginTop="0px"
+                right="20px"
+                src="/graphic1.png"
+                alt="Networked jellyfish"
+                height="calc(20vw + 75px)"
+                maxHeight="400px"
+              />
               <Heading
                 color="#262626"
                 fontFamily="Space Grotesk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -394,6 +404,16 @@ canvas run app.js`}
                 </Text>
               </Box>
               <Box>
+                <Image
+                  display={["none", "none", "none", "block"]}
+                  position="absolute"
+                  right="50px"
+                  marginTop="60px"
+                  src="/graphic2.png"
+                  alt="Networked jellyfish"
+                  height="calc(20vw + 75px)"
+                  maxHeight="400px"
+                />
                 <Heading
                   color="#262626"
                   fontFamily="Space Grotesk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -411,12 +431,12 @@ canvas run app.js`}
                 </Text>
                 <Text color="#262626" mb="12px" fontSize="lg" maxWidth="560px">
                   You can continue using your current schemas and stack,
-                  interoperating with Canvas using your API, and standards like
-                  EIP-712 and SIWE/SIWx.
+                  interoperating with Canvas using your API, using standards
+                  like EIP-712 and SIWE/SIWx.
                 </Text>
                 <Text color="#262626" mb="12px" fontSize="lg" maxWidth="560px">
-                  Canvas applications are upgradeable and easy to extend. For
-                  end users, we provide a hosted service and React hooks.
+                  For users building new applications, we provide a hosted
+                  service and React hooks.
                 </Text>
               </Box>
               <Box>
