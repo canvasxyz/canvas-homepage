@@ -1,4 +1,5 @@
 import Head from "next/head"
+import NextLink from "next/link"
 
 import {
   Flex,
@@ -16,7 +17,8 @@ import { motion } from "framer-motion"
 import { useState, useRef, useEffect } from "react"
 
 import "@fontsource/space-mono"
-import "@fontsource/space-mono/700.css"
+import "@fontsource/space-grotesk"
+import "@fontsource/space-grotesk/700.css"
 import "@fontsource/manrope"
 
 const validateEmail = (email) => {
@@ -209,7 +211,7 @@ export default function Home() {
                 fontFamily="Space Grotesk, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
               Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
                 letterSpacing="-0.2px"
-                fontSize={["30px", "36px", "42px", "45px"]}
+                fontSize={["2rem", "2rem", "2.25rem", "2.25rem"]}
                 maxWidth="700px"
                 mt="36px"
                 mb="24px"
@@ -276,7 +278,7 @@ export default function Home() {
                   <Flex flexDirection={["column", "column", "row", "row"]}>
                     <Input
                       size="lg"
-                      maxWidth="350px"
+                      maxWidth={["none", "none", "350px", "350px"]}
                       borderRadius="0"
                       border="2px solid #262626"
                       borderColor="#262626"
@@ -306,7 +308,7 @@ export default function Home() {
                       _active={{
                         backgroundColor: "#222E9B",
                       }}
-                      whileTap={{ scale: 0.9 }}
+                      whileTap={{ scale: 0.96 }}
                     >
                       {sending ? "Submitting" : "Submit"}
                     </Button>
@@ -343,10 +345,12 @@ export default function Home() {
                   borderRadius="10px"
                   maxWidth="500px"
                   lineHeight="1.35"
+                  as="pre"
+                  fontFamily="Space Mono, monospace"
                 >
-                  <pre>{`npm install -g @canvas-js/cli
+                  {`npm install -g @canvas-js/cli
 canvas init app.js
-canvas run app.js`}</pre>
+canvas run app.js`}
                 </Text>
               </Box>
               <Box>
@@ -373,6 +377,30 @@ canvas run app.js`}</pre>
                   Canvas applications are upgradeable and easy to extend, and we
                   provide a hosted service, React hooks, and more.
                 </Text>
+              </Box>
+              <Box>
+                <NextLink
+                  href="https://hub.canvas.xyz"
+                  passHref
+                  target="_blank"
+                  noreferrer
+                  noopener
+                >
+                  <Button
+                    as={motion.button}
+                    type="submit"
+                    colorScheme="blue"
+                    size="lg"
+                    mt="30px"
+                    borderRadius="0"
+                    backgroundColor="#3242CD"
+                    _hover={{ backgroundColor: "#222E9B" }}
+                    _active={{ backgroundColor: "#222E9B" }}
+                    whileTap={{ scale: 0.96 }}
+                  >
+                    See hosted applications
+                  </Button>
+                </NextLink>
               </Box>
             </Box>
           </Box>
