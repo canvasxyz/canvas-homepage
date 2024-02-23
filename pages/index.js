@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from "next/head"
 
 import {
   Flex,
@@ -10,36 +10,36 @@ import {
   Button,
   Link,
   useToast,
-} from "@chakra-ui/react";
-import { motion } from "framer-motion";
+} from "@chakra-ui/react"
+import { motion } from "framer-motion"
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react"
 
-import "@fontsource/space-mono";
-import "@fontsource/space-mono/700.css";
+import "@fontsource/space-mono"
+import "@fontsource/space-mono/700.css"
 
 const validateEmail = (email) => {
   return email.match(
-    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  );
-};
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+  )
+}
 
 export default function Home() {
-  const [sending, setSending] = useState();
-  const [submitted, setSubmitted] = useState(false);
-  const [hasRendered, setHasRendered] = useState(false);
-  const toast = useToast();
+  const [sending, setSending] = useState()
+  const [submitted, setSubmitted] = useState(false)
+  const [hasRendered, setHasRendered] = useState(false)
+  const toast = useToast()
 
-  const emailRef = useRef();
+  const emailRef = useRef()
 
   useEffect(() => {
-    setHasRendered(true);
-  }, []);
+    setHasRendered(true)
+  }, [])
 
   const send = async (e) => {
-    e.preventDefault();
-    setSending(true);
-    const email = emailRef.current.value?.trim();
+    e.preventDefault()
+    setSending(true)
+    const email = emailRef.current.value?.trim()
 
     if (email === "") {
       toast({
@@ -54,7 +54,7 @@ export default function Home() {
             Please enter an Email Address
           </Box>
         ),
-      });
+      })
     } else if (!validateEmail(email)) {
       toast({
         render: () => (
@@ -68,7 +68,7 @@ export default function Home() {
             Please enter a valid Email Address
           </Box>
         ),
-      });
+      })
     } else {
       let response = await fetch(
         "https://expressjs-postgres-production-62ae.up.railway.app/",
@@ -78,14 +78,14 @@ export default function Home() {
             "Content-Type": "application/json;charset=utf-8",
           },
           body: JSON.stringify({ email }),
-        }
+        },
       ).catch(() => {
-        setSending(false);
-      });
+        setSending(false)
+      })
 
       try {
-        await response.json();
-        setSubmitted(true);
+        await response.json()
+        setSubmitted(true)
       } catch (err) {
         toast({
           render: () => (
@@ -99,12 +99,12 @@ export default function Home() {
               Invalid Email
             </Box>
           ),
-        });
+        })
       }
     }
 
-    setSending(false);
-  };
+    setSending(false)
+  }
 
   return (
     <div>
@@ -323,9 +323,9 @@ export default function Home() {
           display="flex"
           alignItems="center"
         >
-          &#9400; 2022 Canvas Technology Corporation
+          &#9400; 2024 Canvas Technology Corporation
         </Box>
       </Box>
     </div>
-  );
+  )
 }
