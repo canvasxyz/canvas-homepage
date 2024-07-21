@@ -201,8 +201,11 @@ export default function Home() {
             flexGrow="1"
             justifyContent="center"
             paddingBottom={["128px", "128px", "0", "0"]}
+            style={{
+              letterSpacing: "-0.2px",
+            }}
           >
-            <Box maxWidth="720px" padding="24px">
+            <Box maxWidth="750px" padding="24px">
               <Heading
                 color="#262626"
                 fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -211,21 +214,18 @@ export default function Home() {
                 mb="24px"
               >
                 The general computing platform for the decentralized web
-              </Heading>
-              <Text color="#262626" mb="12px" fontSize="lg">
-                We&apos;re building a new peer-to-peer architecture and
-                developer platform for building decentralized applications
                 {hasRendered && (
                   <motion.div
                     style={{
-                      height: "24px",
-                      width: "14px",
+                      marginTop: "10px",
+                      height: "26px",
+                      width: "18px",
                       position: "absolute",
                       backgroundColor: "red",
                       opacity: 0,
                       display: "inline-block",
                       borderRadius: "2px",
-                      marginLeft: "4px",
+                      marginLeft: "8px",
                     }}
                     animate={{
                       opacity: [0, 1, 1, 0, 1, 1, 0, 1, 1, 0],
@@ -251,9 +251,60 @@ export default function Home() {
                     }}
                   ></motion.div>
                 )}
+              </Heading>
+              <Text color="#262626" mb="12px" fontSize="lg">
+                We’re building a serverless runtime for TypeScript applications.
               </Text>
-              <Text color="#262626" fontSize="lg" mb="24px">
-                Sign up to get updates. Public demo coming soon&trade;
+              <Text color="#262626" mb="12px" fontSize="lg">
+                Canvas makes it possible to write ordinary applications that run
+                on a distributed network, without chains or CRDT semantics.
+              </Text>
+              <Text color="#262626" mb="12px" fontSize="lg">
+                You can use an early version of our components today.{" "}
+                <Link
+                  href="https://github.com/canvasxyz/okra"
+                  target="_blank"
+                  color="#3242cd"
+                  fontWeight="bold"
+                >
+                  Okra
+                </Link>
+                ,{" "}
+                <Link
+                  href="https://github.com/canvasxyz/canvas/tree/main/packages/gossiplog"
+                  target="_blank"
+                  color="#3242cd"
+                  fontWeight="bold"
+                >
+                  GossipLog
+                </Link>
+                , and{" "}
+                <Link
+                  href="https://github.com/canvasxyz/canvas"
+                  target="_blank"
+                  color="#3242cd"
+                  fontWeight="bold"
+                >
+                  Canvas
+                </Link>{" "}
+                are open-source on Github, and our{" "}
+                <Link
+                  href="https://www.youtube.com/watch?v=X8nAdx1G-Cs"
+                  target="_blank"
+                  color="#3242cd"
+                  fontWeight="bold"
+                >
+                  libp2p day talk
+                </Link>{" "}
+                is on YouTube.
+              </Text>
+              <Text color="#262626" mb="12px" fontSize="lg">
+                We’re also working with a small number of projects on production
+                beta deployments through 2024.
+              </Text>
+
+              <Text color="#262626" mb="24px" fontSize="lg">
+                Sign up to hear about our launch:
               </Text>
               <form className="email-form" onSubmit={send}>
                 {submitted ? (
@@ -323,7 +374,7 @@ export default function Home() {
           display="flex"
           alignItems="center"
         >
-          &#9400; 2024 Canvas Technology Corporation
+          &#9400; 2024 Canvas Technologies, Inc.
         </Box>
       </Box>
     </div>
