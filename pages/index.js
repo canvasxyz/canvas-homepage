@@ -205,7 +205,7 @@ export default function Home() {
               letterSpacing: "-0.2px",
             }}
           >
-            <Box maxWidth="750px" padding="24px">
+            <Box maxWidth="760px" padding="24px">
               <Heading
                 color="#262626"
                 fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -253,14 +253,15 @@ export default function Home() {
                 )}
               </Heading>
               <Text color="#262626" mb="12px" fontSize="lg">
-                We’re building a serverless runtime for TypeScript applications.
+                We're building a decentralized serverless runtime for
+                TypeScript.
               </Text>
               <Text color="#262626" mb="12px" fontSize="lg">
-                Canvas makes it possible to write ordinary applications that run
-                on a distributed network, without chains or CRDT semantics.
+                Canvas makes it possible to write decentralized applications
+                using SQLite and Postgres, without chains or CRDT semantics.
               </Text>
               <Text color="#262626" mb="12px" fontSize="lg">
-                You can use an early version of our components today.{" "}
+                You can use an early version of our system today. Check out{" "}
                 <Link
                   href="https://github.com/canvasxyz/okra"
                   target="_blank"
@@ -278,7 +279,7 @@ export default function Home() {
                 >
                   GossipLog
                 </Link>
-                , and{" "}
+                ,{" "}
                 <Link
                   href="https://github.com/canvasxyz/canvas"
                   target="_blank"
@@ -286,8 +287,8 @@ export default function Home() {
                   fontWeight="bold"
                 >
                   Canvas
-                </Link>{" "}
-                are open-source on Github, and our{" "}
+                </Link>
+                , and our{" "}
                 <Link
                   href="https://www.youtube.com/watch?v=X8nAdx1G-Cs"
                   target="_blank"
@@ -295,8 +296,8 @@ export default function Home() {
                   fontWeight="bold"
                 >
                   libp2p day talk
-                </Link>{" "}
-                is on YouTube.
+                </Link>
+                .
               </Text>
               <Text color="#262626" mb="12px" fontSize="lg">
                 We’re also working with a small number of projects on production
