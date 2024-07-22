@@ -253,7 +253,7 @@ export default function Home() {
                 )}
               </Heading>
               <Text color="#262626" mb="12px" fontSize="lg">
-                We're building a decentralized serverless runtime for
+                We’re building a decentralized serverless runtime for
                 TypeScript.
               </Text>
               <Text color="#262626" mb="12px" fontSize="lg">
