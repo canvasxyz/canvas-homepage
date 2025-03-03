@@ -253,15 +253,16 @@ export default function Home() {
                 )}
               </Heading>
               <Text color="#262626" mb="12px" fontSize="lg">
-                We’re building a decentralized serverless runtime for
+                We’re building a distributed, peer-to-peer runtime for
                 TypeScript.
               </Text>
               <Text color="#262626" mb="12px" fontSize="lg">
                 Canvas makes it possible to write decentralized applications
-                using SQLite and Postgres, without chains or CRDT semantics.
+                with general-purpose programming languages, where most user
+                interactions can be executed without a chain or central server.
               </Text>
               <Text color="#262626" mb="12px" fontSize="lg">
-                You can use an early version of our system today. Check out{" "}
+                You can preview an early version of our system today. Check out{" "}
                 <Link
                   href="https://github.com/canvasxyz/okra"
                   target="_blank"
@@ -301,7 +302,7 @@ export default function Home() {
               </Text>
               <Text color="#262626" mb="12px" fontSize="lg">
                 We’re also working with a small number of projects on production
-                beta deployments through 2024.
+                beta deployments.
               </Text>
 
               <Text color="#262626" mb="24px" fontSize="lg">
