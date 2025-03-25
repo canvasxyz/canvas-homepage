@@ -376,7 +376,7 @@ export default function Home() {
           display="flex"
           alignItems="center"
         >
-          &#9400; 2024 Canvas Technologies, Inc.
+          &#9400; {new Date().getFullYear()} Canvas Technologies, Inc.
         </Box>
       </Box>
     </div>
