@@ -15,8 +15,7 @@ import { motion } from "framer-motion"
 
 import { useState, useRef, useEffect } from "react"
 
-import "@fontsource/space-mono"
-import "@fontsource/space-mono/700.css"
+import "@fontsource/inter"
 
 const validateEmail = (email) => {
   return email.match(
@@ -48,7 +47,7 @@ export default function Home() {
             color="white"
             p={3}
             bg="#EA4A4A"
-            fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+            fontFamily="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
           Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
           >
             Please enter an Email Address
@@ -62,7 +61,7 @@ export default function Home() {
             color="white"
             p={3}
             bg="#EA4A4A"
-            fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+            fontFamily="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
           Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
           >
             Please enter a valid Email Address
@@ -93,7 +92,7 @@ export default function Home() {
               color="white"
               p={3}
               bg="#EA4A4A"
-              fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+              fontFamily="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
             Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
             >
               Invalid Email
@@ -129,7 +128,7 @@ export default function Home() {
         background="#FBF5E9"
         width="100vw"
         height={["auto", "auto", "100vh", "100vh"]}
-        fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        fontFamily="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
       >
         {/* Lines */}
@@ -194,134 +193,90 @@ export default function Home() {
           height="100%"
         >
           <Flex
-            backgroundImage="/headerbg.svg"
-            backgroundRepeat="no-repeat"
-            backgroundPosition="bottom"
-            backgroundSize="100%"
             flexGrow="1"
-            justifyContent="center"
+            justifyContent="left"
             paddingBottom={["128px", "128px", "0", "0"]}
             style={{
               letterSpacing: "-0.2px",
             }}
           >
-            <Box maxWidth="760px" padding="24px">
-              <Heading
-                color="#262626"
-                fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-              Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
-                mt="36px"
-                mb="24px"
-              >
-                The general computing platform for the decentralized web
-                {hasRendered && (
-                  <motion.div
-                    style={{
-                      marginTop: "10px",
-                      height: "26px",
-                      width: "18px",
-                      position: "absolute",
-                      backgroundColor: "red",
-                      opacity: 0,
-                      display: "inline-block",
-                      borderRadius: "2px",
-                      marginLeft: "8px",
-                    }}
-                    animate={{
-                      opacity: [0, 1, 1, 0, 1, 1, 0, 1, 1, 0],
-                      scale: [0.9, 1, 1, 0.9, 1, 1, 0.9, 1, 1, 0.9],
-                      backgroundColor: [
-                        "#FBF5E9",
-                        "#EA4A4A",
-                        "#EA4A4A",
-                        "#FBF5E9",
-                        "#9FD330",
-                        "#9FD330",
-                        "#FBF5E9",
-                        "#3242CD",
-                        "#3242CD",
-                        "#FBF5E9",
-                      ],
-                    }}
-                    transition={{
-                      repeat: Infinity,
-                      type: "keyframes",
-                      duration: 4,
-                      repeatType: "loop",
-                    }}
-                  ></motion.div>
-                )}
-              </Heading>
+            <Box maxWidth="660px" padding="48px 56px">
               <Text color="#262626" mb="12px" fontSize="lg">
-                We’re building a distributed, peer-to-peer runtime for
-                TypeScript.
+                <strong>Canvas</strong> is a research and engineering company
+                building runtime environments for next-generation software.
               </Text>
               <Text color="#262626" mb="12px" fontSize="lg">
-                Canvas makes it possible to write decentralized applications
-                with general-purpose programming languages, where most user
-                interactions can be executed without a chain or central server.
-              </Text>
-              <Text color="#262626" mb="12px" fontSize="lg">
-                You can preview an early version of our system today. Check out{" "}
+                We are currently focused on cloud-based secure enclaves and{" "}
                 <Link
-                  href="https://github.com/canvasxyz/okra"
+                  href="https://en.wikipedia.org/wiki/Trusted_execution_environment"
                   target="_blank"
-                  color="#3242cd"
-                  fontWeight="bold"
+                  color="#3242CD"
                 >
-                  Okra
-                </Link>
-                ,{" "}
-                <Link
-                  href="https://github.com/canvasxyz/canvas/tree/main/packages/gossiplog"
-                  target="_blank"
-                  color="#3242cd"
-                  fontWeight="bold"
-                >
-                  GossipLog
-                </Link>
-                ,{" "}
-                <Link
-                  href="https://github.com/canvasxyz/canvas"
-                  target="_blank"
-                  color="#3242cd"
-                  fontWeight="bold"
-                >
-                  Canvas
-                </Link>
-                , and our{" "}
-                <Link
-                  href="https://www.youtube.com/watch?v=X8nAdx1G-Cs"
-                  target="_blank"
-                  color="#3242cd"
-                  fontWeight="bold"
-                >
-                  libp2p day talk
+                  Trusted Execution Environments
                 </Link>
                 .
               </Text>
               <Text color="#262626" mb="12px" fontSize="lg">
-                We’re also working with a small number of projects on production
-                beta deployments.
+                Through the first half of 2025, our focus was on peer-to-peer
+                systems. Our technical blog posts included:
               </Text>
+              <Box as="ul" mb="24px" ml="36px">
+                <Text as="li" color="#262626" fontSize="lg" mb="8px">
+                  <Link
+                    href="https://joelgustafson.com/posts/2023-05-04/merklizing-the-key-value-store-for-fun-and-profit"
+                    target="_blank"
+                    color="#3242CD"
+                  >
+                    Merklizing the key/value store for fun and profit
+                  </Link>{" "}
+                  (2023)
+                </Text>
+                <Text as="li" color="#262626" fontSize="lg" mb="8px">
+                  <Link
+                    href="https://joelgustafson.com/posts/2024-09-30/introduction-to-causal-logs"
+                    target="_blank"
+                    color="#3242CD"
+                  >
+                    Introduction to Causal Logs
+                  </Link>{" "}
+                  (2024)
+                </Text>
+                <Text as="li" color="#262626" fontSize="lg" mb="8px">
+                  <Link
+                    href="https://joelgustafson.com/posts/2024-09-30/gossiplog-reliable-causal-broadcast-for-libp2p"
+                    target="_blank"
+                    color="#3242CD"
+                  >
+                    GossipLog - reliable causal broadcast for libp2p
+                  </Link>{" "}
+                  (2024)
+                </Text>
+                <Text as="li" color="#262626" fontSize="lg" mb="8px">
+                  <Link
+                    href="https://joelgustafson.com/posts/2025-07-21/serializable-transactions-for-peer-to-peer-databases"
+                    target="_blank"
+                    color="#3242CD"
+                  >
+                    Serializable transactions for peer-to-peer databases
+                  </Link>{" "}
+                  (2025)
+                </Text>
+              </Box>
 
-              <Text color="#262626" mb="24px" fontSize="lg">
-                Sign up to hear about our launch:
-              </Text>
               <form className="email-form" onSubmit={send}>
                 {submitted ? (
                   <Box
                     color="white"
                     p={3}
                     bg="#3247CD"
-                    fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+                    fontFamily="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
             Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
                   >
-                    Email submitted! We&apos;ll be in touch soon 😁 In the
-                    meantime, why not follow us on{" "}
-                    <Link href="https://twitter.com/canvas_xyz" target="_blank">
-                      <b>Twitter!</b>
+                    Email submitted! You can also{" "}
+                    <Link href="https://X.com/canvas_xyz" target="_blank">
+                      <b>follow us on X</b>
                     </Link>
+                    .
                   </Box>
                 ) : (
                   <Flex flexDirection={["column", "column", "row", "row"]}>
