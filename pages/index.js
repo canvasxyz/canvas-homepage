@@ -260,7 +260,7 @@ export default function Home() {
                 </Text>
                 <Text color="#262626" mb="12px" fontSize="lg">
                   We are building a set of libraries for running applications in
-                  software enclaves, or "Trusted Execution Environments".
+                  software enclaves, or “Trusted Execution Environments”.
                 </Text>
                 <Box as="ul" mb="12px" ml="36px">
                   <Text as="li" color="#262626" fontSize="lg" mb="8px">
