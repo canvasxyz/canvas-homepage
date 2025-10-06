@@ -15,7 +15,8 @@ import { motion } from "framer-motion"
 
 import { useState, useRef, useEffect } from "react"
 
-import "@fontsource/inter"
+import "@fontsource/space-mono"
+import "@fontsource/space-mono/700.css"
 
 const validateEmail = (email) => {
   return email.match(
@@ -47,7 +48,7 @@ export default function Home() {
             color="white"
             p={3}
             bg="#EA4A4A"
-            fontFamily="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+            fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
           Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
           >
             Please enter an Email Address
@@ -61,7 +62,7 @@ export default function Home() {
             color="white"
             p={3}
             bg="#EA4A4A"
-            fontFamily="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+            fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
           Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
           >
             Please enter a valid Email Address
@@ -92,7 +93,7 @@ export default function Home() {
               color="white"
               p={3}
               bg="#EA4A4A"
-              fontFamily="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+              fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
             Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
             >
               Invalid Email
@@ -114,7 +115,7 @@ export default function Home() {
         <meta property="og:title" content="Canvas" />
         <meta
           property="og:description"
-          content="Canvas is a new peer-to-peer architecture and developer platform for building decentralized applications."
+          content="A research and engineering company building the foundations for next-generation software"
         />
 
         <meta
@@ -128,7 +129,7 @@ export default function Home() {
         background="#FBF5E9"
         width="100vw"
         height={["auto", "auto", "100vh", "100vh"]}
-        fontFamily="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
       >
         {/* Lines */}
@@ -193,32 +194,86 @@ export default function Home() {
           height="100%"
         >
           <Flex
+            backgroundImage="/headerbg.svg"
+            backgroundRepeat="no-repeat"
+            backgroundPosition="bottom"
+            backgroundSize="100%"
             flexGrow="1"
-            justifyContent="left"
+            justifyContent="center"
             paddingBottom={["128px", "128px", "0", "0"]}
             style={{
               letterSpacing: "-0.2px",
             }}
           >
-            <Box maxWidth="660px" padding="48px 56px">
+            <Box maxWidth="690px" padding="24px">
+              <Heading
+                color="#262626"
+                fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+              Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
+                mt="36px"
+                mb="24px"
+              >
+                Private&ensp;verifiable&ensp;web&ensp;applications
+                {hasRendered && (
+                  <motion.div
+                    style={{
+                      marginTop: "9px",
+                      height: "28px",
+                      width: "18px",
+                      position: "absolute",
+                      backgroundColor: "red",
+                      opacity: 0,
+                      display: "inline-block",
+                      borderRadius: "2px",
+                      marginLeft: "12px",
+                    }}
+                    animate={{
+                      opacity: [0, 1, 1, 0, 1, 1, 0, 1, 1, 0],
+                      scale: [0.9, 1, 1, 0.9, 1, 1, 0.9, 1, 1, 0.9],
+                      backgroundColor: [
+                        "#FBF5E9",
+                        "#EA4A4A",
+                        "#EA4A4A",
+                        "#FBF5E9",
+                        "#9FD330",
+                        "#9FD330",
+                        "#FBF5E9",
+                        "#3242CD",
+                        "#3242CD",
+                        "#FBF5E9",
+                      ],
+                    }}
+                    transition={{
+                      repeat: Infinity,
+                      type: "keyframes",
+                      duration: 6,
+                      repeatType: "loop",
+                    }}
+                  ></motion.div>
+                )}
+              </Heading>
+
+              <Box>
               <Text color="#262626" mb="12px" fontSize="lg">
-                <strong>Canvas</strong> is a research and engineering company
-                building runtime environments for next-generation software.
+                <strong>Canvas</strong> is a research and engineering company, building 
+                the foundations for next-generation software applications.
               </Text>
               <Text color="#262626" mb="12px" fontSize="lg">
-                We are currently focused on cloud-based secure enclaves and{" "}
-                <Link
-                  href="https://en.wikipedia.org/wiki/Trusted_execution_environment"
-                  target="_blank"
-                  color="#3242CD"
-                >
-                  Trusted Execution Environments
-                </Link>
-                .
+                We are building a set of libraries for running applications inside secure enclaves and <strong>Trusted Execution Environments</strong>.
               </Text>
+              <Box as="ul" mb="12px" ml="36px">
+                <Text as="li" color="#262626" fontSize="lg" mb="8px">
+                  <Link
+                    href="https://github.com/canvasxyz/teekit"
+                    target="_blank"
+                    color="#3242CD"
+                  >
+                    TEEKit
+                  </Link>
+                </Text>
+              </Box>
               <Text color="#262626" mb="12px" fontSize="lg">
-                Through the first half of 2025, our focus was on peer-to-peer
-                systems. Our technical blog posts included:
+                Previously, our focus was on peer-to-peer technology:
               </Text>
               <Box as="ul" mb="24px" ml="36px">
                 <Text as="li" color="#262626" fontSize="lg" mb="8px">
@@ -257,7 +312,7 @@ export default function Home() {
                     target="_blank"
                     color="#3242CD"
                   >
-                    Serializable transactions for peer-to-peer databases
+                    Serializable transactions for p2p databases
                   </Link>{" "}
                   (2025)
                 </Text>
@@ -318,6 +373,7 @@ export default function Home() {
                   </Flex>
                 )}
               </form>
+            </Box>
             </Box>
           </Flex>
         </Flex>
