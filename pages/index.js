@@ -213,7 +213,7 @@ export default function Home() {
                 mt="36px"
                 mb="24px"
               >
-                Private&ensp;verifiable&ensp;web&ensp;applications
+                Private&ensp;verifiable&ensp;web&ensp;services
                 {hasRendered && (
                   <motion.div
                     style={{
@@ -254,126 +254,127 @@ export default function Home() {
               </Heading>
 
               <Box>
-              <Text color="#262626" mb="12px" fontSize="lg">
-                <strong>Canvas</strong> is a research and engineering company, building 
-                the foundations for next-generation software applications.
-              </Text>
-              <Text color="#262626" mb="12px" fontSize="lg">
-                We are building a set of libraries for running applications inside secure enclaves and <strong>Trusted Execution Environments</strong>.
-              </Text>
-              <Box as="ul" mb="12px" ml="36px">
-                <Text as="li" color="#262626" fontSize="lg" mb="8px">
-                  <Link
-                    href="https://github.com/canvasxyz/teekit"
-                    target="_blank"
-                    color="#3242CD"
-                  >
-                    TEEKit
-                  </Link>
+                <Text color="#262626" mb="12px" fontSize="lg">
+                  <strong>Canvas</strong> is a research and engineering company,
+                  building the foundations for next-generation software.
                 </Text>
-              </Box>
-              <Text color="#262626" mb="12px" fontSize="lg">
-                Previously, our focus was on peer-to-peer technology:
-              </Text>
-              <Box as="ul" mb="24px" ml="36px">
-                <Text as="li" color="#262626" fontSize="lg" mb="8px">
-                  <Link
-                    href="https://joelgustafson.com/posts/2023-05-04/merklizing-the-key-value-store-for-fun-and-profit"
-                    target="_blank"
-                    color="#3242CD"
-                  >
-                    Merklizing the key/value store for fun and profit
-                  </Link>{" "}
-                  (2023)
+                <Text color="#262626" mb="12px" fontSize="lg">
+                  We are building a set of libraries for running applications in
+                  software enclaves, or "Trusted Execution Environments".
                 </Text>
-                <Text as="li" color="#262626" fontSize="lg" mb="8px">
-                  <Link
-                    href="https://joelgustafson.com/posts/2024-09-30/introduction-to-causal-logs"
-                    target="_blank"
-                    color="#3242CD"
-                  >
-                    Introduction to Causal Logs
-                  </Link>{" "}
-                  (2024)
-                </Text>
-                <Text as="li" color="#262626" fontSize="lg" mb="8px">
-                  <Link
-                    href="https://joelgustafson.com/posts/2024-09-30/gossiplog-reliable-causal-broadcast-for-libp2p"
-                    target="_blank"
-                    color="#3242CD"
-                  >
-                    GossipLog - reliable causal broadcast for libp2p
-                  </Link>{" "}
-                  (2024)
-                </Text>
-                <Text as="li" color="#262626" fontSize="lg" mb="8px">
-                  <Link
-                    href="https://joelgustafson.com/posts/2025-07-21/serializable-transactions-for-peer-to-peer-databases"
-                    target="_blank"
-                    color="#3242CD"
-                  >
-                    Serializable transactions for p2p databases
-                  </Link>{" "}
-                  (2025)
-                </Text>
-              </Box>
-
-              <form className="email-form" onSubmit={send}>
-                {submitted ? (
-                  <Box
-                    color="white"
-                    p={3}
-                    bg="#3247CD"
-                    fontFamily="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-            Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
-                  >
-                    Email submitted! You can also{" "}
-                    <Link href="https://X.com/canvas_xyz" target="_blank">
-                      <b>follow us on X</b>
-                    </Link>
-                    .
-                  </Box>
-                ) : (
-                  <Flex flexDirection={["column", "column", "row", "row"]}>
-                    <Input
-                      size="lg"
-                      borderRadius="0"
-                      border="2px solid #262626"
-                      borderColor="#262626"
-                      background="#fff"
-                      focusBorderColor="#3242CD"
-                      _hover={{
-                        borderColor: "#262626",
-                      }}
-                      outline="2px"
-                      ref={emailRef}
-                      placeholder="Your Email Address"
-                    />
-
-                    <Button
-                      as={motion.button}
-                      type="submit"
-                      colorScheme="blue"
-                      size="lg"
-                      ml={["0px", "0px", "12px", "12px"]}
-                      mt={["12px", "12px", "0px", "0px"]}
-                      borderRadius="0"
-                      backgroundColor="#3242CD"
-                      isLoading={sending}
-                      _hover={{
-                        backgroundColor: "#222E9B",
-                      }}
-                      _active={{
-                        backgroundColor: "#222E9B",
-                      }}
-                      whileTap={{ scale: 0.9 }}
+                <Box as="ul" mb="12px" ml="36px">
+                  <Text as="li" color="#262626" fontSize="lg" mb="8px">
+                    <Link
+                      href="https://github.com/canvasxyz/teekit"
+                      target="_blank"
+                      color="#3242CD"
                     >
-                      {sending ? "Submitting" : "Submit"}
-                    </Button>
-                  </Flex>
-                )}
-              </form>
-            </Box>
+                      TEEKit
+                    </Link>
+                  </Text>
+                </Box>
+                <Text color="#262626" mb="12px" fontSize="lg">
+                  Previously, our focus was on peer-to-peer technology:
+                </Text>
+                <Box as="ul" mb="24px" ml="36px">
+                  <Text as="li" color="#262626" fontSize="lg" mb="8px">
+                    <Link
+                      href="https://joelgustafson.com/posts/2023-05-04/merklizing-the-key-value-store-for-fun-and-profit"
+                      target="_blank"
+                      color="#3242CD"
+                    >
+                      Merklizing the key/value store for fun and profit
+                    </Link>{" "}
+                    (2023)
+                  </Text>
+                  <Text as="li" color="#262626" fontSize="lg" mb="8px">
+                    <Link
+                      href="https://joelgustafson.com/posts/2024-09-30/introduction-to-causal-logs"
+                      target="_blank"
+                      color="#3242CD"
+                    >
+                      Introduction to Causal Logs
+                    </Link>{" "}
+                    (2024)
+                  </Text>
+                  <Text as="li" color="#262626" fontSize="lg" mb="8px">
+                    <Link
+                      href="https://joelgustafson.com/posts/2024-09-30/gossiplog-reliable-causal-broadcast-for-libp2p"
+                      target="_blank"
+                      color="#3242CD"
+                    >
+                      GossipLog - reliable causal broadcast for libp2p
+                    </Link>{" "}
+                    (2024)
+                  </Text>
+                  <Text as="li" color="#262626" fontSize="lg" mb="8px">
+                    <Link
+                      href="https://joelgustafson.com/posts/2025-07-21/serializable-transactions-for-peer-to-peer-databases"
+                      target="_blank"
+                      color="#3242CD"
+                    >
+                      Serializable transactions for p2p databases
+                    </Link>{" "}
+                    (2025)
+                  </Text>
+                </Box>
+
+                <form className="email-form" onSubmit={send}>
+                  {submitted ? (
+                    <Box
+                      color="white"
+                      p={3}
+                      bg="#3247CD"
+                      fontFamily="Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+            Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
+                    >
+                      Email submitted! You can also{" "}
+                      <Link href="https://X.com/canvas_xyz" target="_blank">
+                        <b>follow us on X</b>
+                      </Link>
+                      .
+                    </Box>
+                  ) : (
+                    <Flex flexDirection={["column", "column", "row", "row"]}>
+                      <Input
+                        size="lg"
+                        borderRadius="0"
+                        border="2px solid #262626"
+                        borderColor="#262626"
+                        background="#fff"
+                        focusBorderColor="#3242CD"
+                        _hover={{
+                          borderColor: "#262626",
+                        }}
+                        outline="2px"
+                        ref={emailRef}
+                        placeholder="Your Email Address"
+                      />
+
+                      <Button
+                        as={motion.button}
+                        type="submit"
+                        colorScheme="blue"
+                        size="lg"
+                        ml={["0px", "0px", "12px", "12px"]}
+                        mt={["12px", "12px", "0px", "0px"]}
+                        borderRadius="0"
+                        backgroundColor="#3242CD"
+                        isLoading={sending}
+                        _hover={{
+                          backgroundColor: "#222E9B",
+                        }}
+                        _active={{
+                          backgroundColor: "#222E9B",
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                      >
+                        {sending ? "Submitting" : "Submit"}
+                      </Button>
+                    </Flex>
+                  )}
+                </form>
+              </Box>
             </Box>
           </Flex>
         </Flex>
