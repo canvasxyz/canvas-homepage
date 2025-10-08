@@ -129,8 +129,7 @@ export default function Home() {
         background="#FBF5E9"
         width="100vw"
         height={["auto", "auto", "100vh", "100vh"]}
-        fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
+        fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif"
       >
         {/* Lines */}
         <Box
@@ -205,7 +204,7 @@ export default function Home() {
               letterSpacing: "-0.2px",
             }}
           >
-            <Box maxWidth="690px" padding="24px">
+            <Box maxWidth="710px" padding="24px">
               <Heading
                 color="#262626"
                 fontFamily="Space Mono, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -213,11 +212,11 @@ export default function Home() {
                 mt="36px"
                 mb="24px"
               >
-                Private&ensp;verifiable&ensp;web&ensp;services
+                Autonomous&ensp;web&ensp;services
                 {hasRendered && (
                   <motion.div
                     style={{
-                      marginTop: "9px",
+                      marginTop: "7px",
                       height: "28px",
                       width: "18px",
                       position: "absolute",
@@ -254,60 +253,31 @@ export default function Home() {
               </Heading>
 
               <Box>
-                <Text color="#262626" mb="12px" fontSize="lg">
-                  <strong>Canvas</strong> is a research and engineering company,
-                  building the foundations for next-generation software.
+                <Text color="#262626" mb="12px">
+                  We are building a toolchain for running applications in secure
+                  enclaves, or “Trusted Execution Environments”.
                 </Text>
-                <Text color="#262626" mb="12px" fontSize="lg">
-                  We are building a set of libraries for running applications in
-                  software enclaves, or “Trusted Execution Environments”.
+                <Text color="#262626" mb="12px">
+                  Secure enclaves make it possible to create software that runs
+                  verifiably, autonomously, and privately, by delegating trust.
                 </Text>
-                <Box as="ul" mb="12px" ml="36px">
-                  <Text as="li" color="#262626" fontSize="lg" mb="8px">
+                <Box as="ul" mt="16px" mb="14px" ml="36px">
+                  <Text as="li" color="#262626" mb="8px">
                     <Link
                       href="https://github.com/canvasxyz/teekit"
                       target="_blank"
                       color="#3242CD"
                     >
-                      TEEKit
-                    </Link>
+                      TEEKit: End-to-end verifiable TEEs
+                    </Link>{" "}
+                    (2025)
                   </Text>
                 </Box>
-                <Text color="#262626" mb="12px" fontSize="lg">
-                  Previously, our focus was on peer-to-peer technology:
+                <Text color="#262626" mb="12px">
+                  Previously, we worked on a similar system using p2p tech:
                 </Text>
                 <Box as="ul" mb="24px" ml="36px">
-                  <Text as="li" color="#262626" fontSize="lg" mb="8px">
-                    <Link
-                      href="https://joelgustafson.com/posts/2023-05-04/merklizing-the-key-value-store-for-fun-and-profit"
-                      target="_blank"
-                      color="#3242CD"
-                    >
-                      Merklizing the key/value store for fun and profit
-                    </Link>{" "}
-                    (2023)
-                  </Text>
-                  <Text as="li" color="#262626" fontSize="lg" mb="8px">
-                    <Link
-                      href="https://joelgustafson.com/posts/2024-09-30/introduction-to-causal-logs"
-                      target="_blank"
-                      color="#3242CD"
-                    >
-                      Introduction to Causal Logs
-                    </Link>{" "}
-                    (2024)
-                  </Text>
-                  <Text as="li" color="#262626" fontSize="lg" mb="8px">
-                    <Link
-                      href="https://joelgustafson.com/posts/2024-09-30/gossiplog-reliable-causal-broadcast-for-libp2p"
-                      target="_blank"
-                      color="#3242CD"
-                    >
-                      GossipLog - reliable causal broadcast for libp2p
-                    </Link>{" "}
-                    (2024)
-                  </Text>
-                  <Text as="li" color="#262626" fontSize="lg" mb="8px">
+                  <Text as="li" color="#262626" mb="8px">
                     <Link
                       href="https://joelgustafson.com/posts/2025-07-21/serializable-transactions-for-peer-to-peer-databases"
                       target="_blank"
@@ -316,6 +286,26 @@ export default function Home() {
                       Serializable transactions for p2p databases
                     </Link>{" "}
                     (2025)
+                  </Text>
+                  <Text as="li" color="#262626" mb="8px">
+                    <Link
+                      href="https://joelgustafson.com/posts/2024-09-30/gossiplog-reliable-causal-broadcast-for-libp2p"
+                      target="_blank"
+                      color="#3242CD"
+                    >
+                      GossipLog: Reliable causal broadcast for libp2p
+                    </Link>{" "}
+                    (2024)
+                  </Text>
+                  <Text as="li" color="#262626" mb="8px">
+                    <Link
+                      href="https://joelgustafson.com/posts/2023-05-04/merklizing-the-key-value-store-for-fun-and-profit"
+                      target="_blank"
+                      color="#3242CD"
+                    >
+                      Okra: Merklizing the k/v store for fun and profit
+                    </Link>{" "}
+                    (2023)
                   </Text>
                 </Box>
 
@@ -384,7 +374,9 @@ export default function Home() {
           width="100%"
           bottom="0"
           borderTop="2px solid #9FD330"
-          paddingLeft={["48px", "48px", "76px", "76px"]}
+          paddingLeft={["20px", "48px", "76px", "76px"]}
+          paddingBottom="2px"
+          textAlign="center"
           display="flex"
           alignItems="center"
         >
